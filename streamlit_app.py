@@ -50,9 +50,9 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 add_my_fruit=streamlit.text_input("what fruit would you like information about")
 streamlit.write('The user entered ', add_my_fruit)
 
+my_cur = my_cnx.cursor()
 my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('from streamlit')")
 
-my_cur = my_cnx.cursor()
 my_cur.execute("select * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 streamlit.text("Fruit load list contains")
 my_data_row = my_cur.fetchall()
