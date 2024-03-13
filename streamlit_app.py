@@ -53,6 +53,6 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 
 my_cur = my_cnx.cursor()
-my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+my_cur.execute("select * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 streamlit.text("Fruit load list contains")
 my_data_row = my_cur.fetchone()
